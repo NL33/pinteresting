@@ -1,0 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic-ext);
+
+$navbar-default-link-color: #2ecc71;
+$navbar-default-bg: white;
+$navbar-height: 35px;
+$jumbotron-color: #95a5a6;
+$body-bg: #2980b9;
+$jumbotron-heading-color: #2ecc71;
+
+.center {
+	   text-align: center;
+}
+
+.right {text-align: right;} 
+
+.left {text-align: left;}
+@import 'bootstrap'
