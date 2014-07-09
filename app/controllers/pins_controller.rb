@@ -1,5 +1,8 @@
 class PinsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  
 
 
   def index
@@ -47,6 +50,12 @@ class PinsController < ApplicationController
     def set_pin
       @pin = Pin.find(params[:id])
     end
+
+    def correct_user
+      @pin = current_user.pins.find_by(id: params[:id]) # this means: it tries to look up the pin through the user, and if the pin does not belong to the user, then “@pin” will be nil.
+      redirect_to pins_path, notice: 'Not authorized to edit this pin' if @pin.nil? #this says if pin is nil, redirect to the pins_path, with the notice: “Not authorized to edit this pin”
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
