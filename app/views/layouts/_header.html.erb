@@ -17,8 +17,8 @@
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home", root_path %></li>
    <% if user_signed_in? %>
-      <li><%= link_to 'Pins!', pins_path %></li>
-      <li><%= link_to 'Create Pin', new_pin_path %></li>
+      <li><%= link_to raw('<span class="glyphicon glyphicon-play"></span>Stuff!'), pins_path %></li>
+      <li><%= link_to raw('<span class="glyphicon glyphicon-flash"></span>Create Stuff'), new_pin_path %></li>
        <li><%= link_to "About", about_path %></li> 
       <li><%= link_to "Team", team_path %></li>
       <li><%= link_to "Account Details", edit_user_registration_path %></li>
