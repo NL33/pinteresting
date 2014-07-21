@@ -10,6 +10,7 @@ $body-bg: #1abc9c;
 $jumbotron-heading-color: #e74c3c;
 $jumbotron-bg: white;
 $link-color: #d35400;
+$jumbotron-horizontal-align: middle;
 
 
 @import 'bootstrap';
@@ -23,6 +24,45 @@ $link-color: #d35400;
 .left {text-align: left;}
 
 .navbar-brand {font-weight: bold;}
+
+
+.font-effect{ 
+    h1 {
+        font-size: 1.8em;
+    }
+     h2 {
+        font-size: 2.2em;
+    }    
+}
+
+.font-size1{ 
+        font-size: 2.3em;
+    
+}
+
+.font-size2{ 
+        font-size: 1.5em;
+    
+}
+
+.font-size3{ 
+        font-size: 1.3em;
+    
+}
+
+.jumbotron-size{ 
+	padding: 0.002em;
+	width: 525px;
+    h1 {
+        font-size: 1.8em;
+    }
+     h2 {
+        font-size: 2.2em;
+    }
+    jumbotron-horizontal-align: center;
+    text-align: center;
+    
+}// This is not used, but was set up to provide a class that alters the jumbotron settings, especially size
 
 
 

@@ -1,20 +1,26 @@
 <%= render 'pages/home' unless user_signed_in? %>
+<%= render 'pages/home2' if user_signed_in? %>
 
-  <div style="font-family: Cinzel; color: red;
-  <h1></h1>
-  <h1><button type="button" class="btn btn-default btn-lg">Here Is The Stuff. SHOOKAWOOKABOOMBOOM!</button></h1>
-  </h1>
-</div>
+<% if user_signed_in? %>
+<% else %>
+ <div style="font-family: Cinzel; color: red;
+    <h1></h1>
+    <h1><button type="button" class="btn btn-default btn-lg">Here is some of the Stuff. Sign in, and create more!</button></h1>
+    </h1>
+  </div>
+<% end %>
 
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
      <div class="box panel panel-default">
        <%= link_to image_tag(pin.image.url(:large)), pin %> 
         <div class="panel-body">
+          <div class="font-size3">
            <div style="font-family: Bangers;"
               <%=%><br/> 
                <%= pin.description %><br/> 
             </div>
+          </div>
              <div style="font-family: Indie Flower; color: #e74c3c"
                 <strong><%= pin.user.email if pin.user %></strong>
             </div>

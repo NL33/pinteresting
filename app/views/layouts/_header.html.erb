@@ -15,7 +15,6 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
    <% if user_signed_in? %>
       <li><%= link_to raw('<span class="glyphicon glyphicon-play"></span>Stuff!'), pins_path %></li>
       <li><%= link_to raw('<span class="glyphicon glyphicon-flash"></span>Create Stuff'), new_pin_path %></li>

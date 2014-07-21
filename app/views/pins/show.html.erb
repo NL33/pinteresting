@@ -7,17 +7,22 @@
         <%= image_tag @pin.image.url(:medium) %>
       </div>
 
-      <div class="panel-body">
-         <div style="font-family: Bangers"
-              <p></p>
-              <p><strong><%= @pin.description %></strong></p>
-          </div>
-          <div style="font-family: Indie Flower; color: #e74c3c"
-              <p><strong><%= @pin.user.email if @pin.user %></strong></p>
-          </div>
-              <% if @pin.user == current_user %>
+ 
+  <div class="panel-body">
+      <div style="font-family: Bangers"
+      <div class="font-size1"  
+            <p></p>
+             <p><strong><%= @pin.description %></strong></p>
+      </div>
+      </div>
+     <div class="font-size2"
+      <div style="font-family: Indie Flower; color: #e74c3c"
+            <p><strong><%= @pin.user.email if @pin.user %></strong></p>
+            <% if @pin.user == current_user %>
                   <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_pin_path(@pin) %>
-              <% end %>
+            <% end %>
+      </div>
+        </div>
       </div>
     </div>
   </div>

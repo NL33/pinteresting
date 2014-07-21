@@ -1,14 +1,14 @@
 class PinsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
-  
+  before_action :authenticate_user!, except: [:index, :show]
   
 
 
-  def index
-    @pins = Pin.all
-  end
+ def index
+  @pins = Pin.all.order ("created_at DESC")
+end
+
 
 
   def show
