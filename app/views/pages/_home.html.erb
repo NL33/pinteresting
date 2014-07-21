@@ -5,11 +5,11 @@
 </div>
 
 	<% if user_signed_in? %>
-	<div style="font-family: Indie Flower;"
-	 <p></p>
-	 <p> Just an FYI: There is a heck of a lot of awesomeness going on here <span class="glyphicon glyphicon-thumbs-up"></span></p>
-	 </div>
-	  <% else %>
+		<div style="font-family: Indie Flower;"
+	 	<p></p>
+	 	<p> Just an FYI: There is a heck of a lot of awesomeness going on here <span class="glyphicon glyphicon-thumbs-up"></span></p>
+	 	</div>
+	<% else %>
 	    <p>
 	     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-danger btn-lg" %>
 	     <%= link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %>
