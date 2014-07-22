@@ -1,0 +1,177 @@
+Searching 273 files for ""create pin""
+
+0 matches across 0 files
+
+
+Searching 273 files for ""create_pin""
+
+0 matches across 0 files
+
+
+Searching 273 files for "create_pin"
+
+0 matches across 0 files
+
+
+Searching 273 files for "create_pin"
+
+0 matches across 0 files
+
+
+Searching 273 files for "create pin"
+
+/Users/sean/Desktop/pinteresting/test/controllers/pins_controller_test.rb:
+   17    end
+   18  
+   19:   test "should create pin" do
+   20      assert_difference('Pin.count') do
+   21        post :create, pin: { description: @pin.description }
+
+1 match in 1 file
+
+
+Searching 273 files for "create"
+
+/Users/sean/Desktop/pinteresting/app/assets/stylesheets/application.css:
+    8   * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+    9   * compiled file so the styles you add here take precedence over styles defined in any styles
+   10:  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+   11   * file per style scope.
+   12   *
+
+/Users/sean/Desktop/pinteresting/app/controllers/application_controller.rb:
+    3    # For APIs, you may want to use :null_session instead.
+    4    protect_from_forgery with: :exception
+    5:   before_filter :configure_permitted_parameters, if: :devise_controller?  # This creates a before action, saying configure permitted paramaters, and only if the devise controller is the controller in play. Devise controls stuff about users edit their account, login, etc… So this kicks in only if one of these is in play.]]
+    6  
+    7  protected # this means only the application can see this
+
+/Users/sean/Desktop/pinteresting/app/controllers/pins_controller.rb:
+    7  
+    8   def index
+    9:   @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+   10  end
+   11  
+   ..
+   23    end
+   24  
+   25:   def create
+   26      @pin = current_user.pins.build(pin_params)
+   27        if @pin.save
+   28:         redirect_to @pin, notice: 'Stuff was successfully created.' 
+   29        else
+   30          render action: 'new' 
+
+/Users/sean/Desktop/pinteresting/app/views/devise/mailer/reset_password_instructions.html.erb:
+    6  
+    7  <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+    9  
+
+/Users/sean/Desktop/pinteresting/app/views/layouts/_header.html.erb:
+   18     <% if user_signed_in? %>
+   19        <li><%= link_to raw('<span class="glyphicon glyphicon-play"></span>Stuff!'), pins_path %></li>
+   20:       <li><%= link_to raw('<span class="glyphicon glyphicon-flash"></span>Create Stuff'), new_pin_path %></li>
+   21         <li><%= link_to "About", about_path %></li> 
+   22        <li><%= link_to "Team", team_path %></li>
+
+/Users/sean/Desktop/pinteresting/app/views/pins/index.html.erb:
+    6   <div style="font-family: Cinzel; color: red;
+    7      <h1></h1>
+    8:     <h1><button type="button" class="btn btn-default btn-lg">Here is some of the Stuff. Sign in, and create more!</button></h1>
+    9      </h1>
+   10    </div>
+
+/Users/sean/Desktop/pinteresting/config/routes.rb:
+    8    
+    9  
+   10:   # The priority is based upon order of creation: first created -> highest priority.
+   11    # See how all your routes lay out with "rake routes".
+   12  
+
+/Users/sean/Desktop/pinteresting/config/environments/test.rb:
+    5    # test suite. You never need to work with it otherwise. Remember that
+    6    # your test database is "scratch space" for the test suite and is wiped
+    7:   # and recreated between test runs. Don't rely on the data there!
+    8    config.cache_classes = true
+    9  
+
+/Users/sean/Desktop/pinteresting/config/initializers/devise.rb:
+  132    # config.extend_remember_period = false
+  133  
+  134:   # Options to be passed to the created cookie. For instance, you can set
+  135    # secure: true in order to force SSL only cookies.
+  136    # config.rememberable_options = {}
+
+/Users/sean/Desktop/pinteresting/db/schema.rb:
+    5  #
+    6  # Note that this schema.rb definition is the authoritative source for your
+    7: # database schema. If you need to create the application database on another
+    8  # system, you should be using db:schema:load, not running all the migrations
+    9  # from scratch. The latter is a flawed and unsustainable approach (the more migrations
+   ..
+   14  ActiveRecord::Schema.define(version: 20140722160728) do
+   15  
+   16:   create_table "pins", force: true do |t|
+   17      t.string   "description"
+   18:     t.datetime "created_at"
+   19      t.datetime "updated_at"
+   20      t.integer  "user_id"
+   ..
+   27    add_index "pins", ["user_id"], name: "index_pins_on_user_id"
+   28  
+   29:   create_table "users", force: true do |t|
+   30      t.string   "email",                  default: "", null: false
+   31      t.string   "encrypted_password",     default: "", null: false
+   32      t.string   "reset_password_token"
+   33      t.datetime "reset_password_sent_at"
+   34:     t.datetime "remember_created_at"
+   35      t.integer  "sign_in_count",          default: 0,  null: false
+   36      t.datetime "current_sign_in_at"
+   ..
+   38      t.string   "current_sign_in_ip"
+   39      t.string   "last_sign_in_ip"
+   40:     t.datetime "created_at"
+   41      t.datetime "updated_at"
+   42      t.string   "name"
+
+/Users/sean/Desktop/pinteresting/db/seeds.rb:
+    1  # This file should contain all the record creation needed to seed the database with its default values.
+    2: # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+    3  #
+    4  # Examples:
+    5  #
+    6: #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+    7: #   Mayor.create(name: 'Emanuel', city: cities.first)
+    8  
+
+/Users/sean/Desktop/pinteresting/db/migrate/20140701212834_devise_create_users.rb:
+    1: class DeviseCreateUsers < ActiveRecord::Migration
+    2    def change
+    3:     create_table(:users) do |t|
+    4        ## Database authenticatable
+    5        t.string :email,              null: false, default: ""
+    .
+   11  
+   12        ## Rememberable
+   13:       t.datetime :remember_created_at
+   14  
+   15        ## Trackable
+
+/Users/sean/Desktop/pinteresting/db/migrate/20140703204507_create_pins.rb:
+    1: class CreatePins < ActiveRecord::Migration
+    2    def change
+    3:     create_table :pins do |t|
+    4        t.string :description
+    5  
+
+/Users/sean/Desktop/pinteresting/test/controllers/pins_controller_test.rb:
+   17    end
+   18  
+   19:   test "should create pin" do
+   20      assert_difference('Pin.count') do
+   21:       post :create, pin: { description: @pin.description }
+   22      end
+   23  
+
+27 matches across 14 files

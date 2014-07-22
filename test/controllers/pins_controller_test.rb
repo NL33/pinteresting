@@ -16,7 +16,7 @@ class PinsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create pin" do
+  test "should create stuff" do
     assert_difference('Pin.count') do
       post :create, pin: { description: @pin.description }
     end
