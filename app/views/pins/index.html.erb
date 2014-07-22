@@ -21,9 +21,13 @@
                <%= pin.description %><br/> 
             </div>
           </div>
+
+    <% if user_signed_in? %>
              <div style="font-family: Indie Flower; color: #e74c3c"
-                <strong><%= pin.user.email if pin.user %></strong>
+                <strong><%= pin.user.name if pin.user %></strong>
             </div>
+    <% end %>
+
                 <% if pin.user == current_user %>
                   <div class="actions">
                     <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit |', edit_pin_path(pin) %>

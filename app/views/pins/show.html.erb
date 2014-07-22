@@ -17,7 +17,7 @@
       </div>
      <div class="font-size2"
       <div style="font-family: Indie Flower; color: #e74c3c"
-            <p><strong><%= @pin.user.email if @pin.user %></strong></p>
+            <p><strong><%= @pin.user.name if @pin.user %></strong></p>
             <% if @pin.user == current_user %>
                   <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_pin_path(@pin) %>
             <% end %>
