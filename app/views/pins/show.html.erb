@@ -18,8 +18,9 @@
      <div class="font-size2"
       <div style="font-family: Indie Flower; color: #e74c3c"
             <p><strong><%= @pin.user.name if @pin.user %></strong></p>
-            <% if @pin.user == current_user %>
+           <% if current_user && @pin.user == current_user %>
                   <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_pin_path(@pin) %>
+                  <span class="glyphicon glyphicon-fire"></span><%= link_to 'Remove', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
       </div>
         </div>
