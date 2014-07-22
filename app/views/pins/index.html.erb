@@ -26,6 +26,7 @@
              <div style="font-family: Indie Flower; color: #e74c3c"
                 <strong><%= pin.user.name if pin.user %></strong>
             </div>
+    <% else %>
     <% end %>
 
                 <% if pin.user == current_user %>
