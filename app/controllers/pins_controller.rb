@@ -25,7 +25,7 @@ end
   def create
     @pin = current_user.pins.build(pin_params)
       if @pin.save
-        redirect_to @pin, notice: 'Stuff was successfully created.' 
+        redirect_to @pin, notice: 'Yes! You just made some stuff!' 
       else
         render action: 'new' 
     end
@@ -34,7 +34,7 @@ end
   
   def update
       if @pin.update(pin_params)
-        redirect_to @pin, notice: 'Stuff was successfully updated.' 
+        redirect_to @pin, notice: 'Cool. You just updated your stuff.' 
       else
         render action: 'edit' 
     end

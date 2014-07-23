@@ -23,8 +23,10 @@
           </div>
 
     <% if user_signed_in? %>
-             <div style="font-family: Indie Flower; color: #e74c3c"
-                <strong><%= pin.user.name if pin.user %></strong>
+            <div class="font-size4">
+              <div style="font-family: Indie Flower; color: #e74c3c"
+                  <strong><%= pin.user.name if pin.user %></strong>
+              </div>
             </div>
     <% else %>
     <% end %>
