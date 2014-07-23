@@ -6,5 +6,6 @@ class Pin < ActiveRecord::Base
 
      validates :image, presence: true #added to ensure a user uploads an image and description
 	 validates :description, presence: true
+	 validates :description, length: { in: 2..28, too_short: "must have at least two characters. Anything more to say on this one?", too_long: "can't be more than 28 characters. Nicely done, though.", }
 
 end
